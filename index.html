@@ -170,7 +170,7 @@
 
         <div class="botons px-3">
             <div class="contenidor-missatge-nomes-pc">
-                <div class="missatge" onclick="posarOverlay(false)">Només<br>per PC</div>
+                <div class="missatge" onclick="mostrarOverlay(false)">Només<br>per PC</div>
                 <a class="boto boing jugar" href="./webgl/">
                     <img class="logo" src="assets/unity.png" alt="">
                     Jugar
@@ -207,13 +207,13 @@
         if (!location.pathname.endsWith("index.html") && !location.pathname.endsWith("/"))
             location.pathname += '/';
 
-        // Detectar mobil per pantalla tactil //
-        function posarOverlay(sn) {
-            sn = sn ?? (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.maxTouchPoints > 0)); // Es tàctil //
+        function mostrarOverlay(sn) {
             document.querySelector(".contenidor-missatge-nomes-pc .missatge").style.display = sn ? "flex" : "none";
         }
-        
-        posarOverlay();
+
+        // Detectar mobil per pantalla tactil //
+        let esPantallaTactil = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        mostrarOverlay(esPantallaTactil);
 
         
         

@@ -53,15 +53,15 @@
             text-align: center;
             color: #8e0000;
 
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             padding: 0 1rem;
 
         }
         .botons {
+            --row-gap: 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2rem;
             margin: auto;
         }
         .botons .boto {
@@ -99,10 +99,36 @@
         }
         .boto.youtube {
             background-color: #ff0000;
-            
+            margin-bottom: var(--row-gap);            
         }
         .boto.info {
+            background: linear-gradient(to top right, #071e7c, #79014d);
             padding: 1rem 2rem;
+        }
+
+        .contenidor-missatge-nomes-pc {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--row-gap);
+            padding: calc(var(--row-gap) / 2);
+            margin-bottom: calc(var(--row-gap) / 2);
+        }
+        .contenidor-missatge-nomes-pc .missatge {
+            font-size: 2.5rem;
+            border-radius: 3rem;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+
+            position: absolute;
+            inset: 0;
+            display: none; /* flex; */
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            background-color: rgba(158, 158, 158, 0.25);
         }
 
 
@@ -143,24 +169,26 @@
         </div>
 
         <div class="botons px-3">
-            <a class="boto boing jugar" href="./webgl/">
-                <img class="logo" src="assets/unity.png" alt="">
-                Jugar
-            </a>
-            <a class="boto boing itch" href="https://jmaspgames.itch.io/mad-jumpgate">
-                <img class="logo" src="assets/itch-io.svg" alt="">
-                Jugar a itch.io
-            </a>
-            <a class="boto boing windows" href="https://jordimas96.github.io/r/mad-jumpgate-download-windows">
-                <img class="logo" src="assets/windows.png" alt="">
-                Descarregar per a Windows
-            </a>
+            <div class="contenidor-missatge-nomes-pc">
+                <div class="missatge" onclick="posarOverlay(false)">Només<br>per PC</div>
+                <a class="boto boing jugar" href="./webgl/">
+                    <img class="logo" src="assets/unity.png" alt="">
+                    Jugar
+                </a>
+                <a class="boto boing itch" href="https://jmaspgames.itch.io/mad-jumpgate">
+                    <img class="logo" src="assets/itch-io.svg" alt="">
+                    Jugar a itch.io
+                </a>
+                <a class="boto boing windows" href="https://jordimas96.github.io/r/mad-jumpgate-download-windows">
+                    <img class="logo" src="assets/windows.png" alt="">
+                    Descarregar per a Windows
+                </a>
+            </div>
             <a class="boto boing youtube" href="https://youtu.be/TwJ3bpvQ4qA">
                 <img class="logo" src="assets/youtube.png" alt="">
                 Gameplay a YouTube
             </a>
             <a class="boto boing info" href="https://jordimas96.github.io/mad-jumpgate-info">
-                <!-- <img class="logo" src="assets/unity.png" alt=""> -->
                 Més informació
             </a>
         </div>
@@ -178,6 +206,17 @@
     <script>
         if (!location.pathname.endsWith("index.html") && !location.pathname.endsWith("/"))
             location.pathname += '/';
+
+        // Detectar mobil per pantalla tactil //
+        function posarOverlay(sn) {
+            sn = sn ?? (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.maxTouchPoints > 0)); // Es tàctil //
+            document.querySelector(".contenidor-missatge-nomes-pc .missatge").style.display = sn ? "flex" : "none";
+        }
+        
+        posarOverlay();
+
+        
+        
         
         function obrirCV(nomArxiu) {
             location.assign(location.href + nomArxiu);

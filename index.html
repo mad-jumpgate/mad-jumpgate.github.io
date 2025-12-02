@@ -33,6 +33,7 @@
         }
         header {
             padding: 0.7rem;
+            backdrop-filter: blur(30px);
         }
         header > a {
             display: inline-block;
@@ -44,8 +45,9 @@
             width: 3.5rem;
             border-radius: 50%;
         }
-        section {
+        .content {
             width: 100%;
+            padding-top: 7rem;
             margin-bottom: 4rem;
         }
         .titol {
@@ -57,6 +59,25 @@
             padding: 0 1rem;
 
         }
+
+        .descripcio {
+            max-width: 1200px;
+            padding: 1rem;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 1.3rem;
+        }
+
+        .gameplay {
+            text-align: center;
+        }
+        .gameplay iframe {
+            max-width: 1200px;
+            width: 100%;
+            border-radius: 2rem;
+            aspect-ratio: 16 / 9;
+        }
+
         .botons {
             --row-gap: 2rem;
             display: flex;
@@ -157,20 +178,48 @@
 </head>
 <body>
 
-    <header>
+    <header class="position-fixed w-100">
         <a href="/" class="boing">
             <img class="logo" src="https://jordimas96.github.io/assets_repo/logos-jmas/red.png" alt="logo">
         </a>
     </header>
 
-    <section>
-        <div class="titol">
+    <section class="content">
+        <section class="titol">
             Mad Jumpgate
-        </div>
+        </section>
 
-        <div class="botons px-3">
+        <section class="descripcio mb-5">
+            Aquest és el meu projecte final del segon curs del Cicle Superior de Desenvolupament d'Aplicacions Multiplataforma (DAM). Em va portar 2 setmanes de feina crear aquest <i>First Person Shooter</i> des de zero, utilitzant Unity. Des del moviment de la càmara i del jugador, passant per les mecàniques de cada tipus d'arma (tant l'usuari com els enemics) i punts de spawn, fins a gestionar l'inventari format per la munició i els subministraments.<br><br>
+            
+            Característiques:
+            <ul>
+                <li>5 nivells</li>
+                <li>4 tipus d'armes diferents</li>
+                <li>Diversos objectes curatius i armilles antibales</li>
+                <li>Granades</li>
+                <li>Spawn d'enemics segons la ubicació del jugador</li>
+                <li>Trampes</li>
+                <li>5 tipus d'enemics dividits en 2 categories amb diferents habilitats</li>
+                <li>Efectes especials</li>
+                <li>Marcador del dany causat</li>
+                <li>Explosions</li>
+                <li>Canvi de l'ambientació del joc al tenir poca salut</li>
+                <li>Música diferent segons el nivell i el moment del joc.</li>
+            </ul>
+        </section>
+
+        <section class="gameplay">
+            <iframe width="1920" height="1080" src="https://www.youtube.com/embed/TwJ3bpvQ4qA?si=ZurdWBE81or7K2SC" title="Mad Jumpgate gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
+            
+        </section>
+
+        <section class="botons px-3">
             <div class="contenidor-missatge-nomes-pc">
-                <div class="missatge" onclick="mostrarOverlay(false)">Només<br>per PC</div>
+                <div class="missatge" onclick="mostrarOverlay(false)">
+                    Aquest joc és<br>només per PC
+                </div>
+
                 <a class="boto boing jugar" href="./webgl/">
                     <img class="logo" src="assets/unity.png" alt="">
                     Jugar
@@ -191,7 +240,7 @@
             <a class="boto boing info" href="https://jordimas96.github.io/mad-jumpgate-info">
                 Més informació
             </a>
-        </div>
+        </section>
 
     </section>
 

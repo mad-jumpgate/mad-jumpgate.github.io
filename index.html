@@ -50,6 +50,9 @@
             padding-top: 7rem;
             margin-bottom: 4rem;
         }
+        .content > section {
+            margin: 8rem auto;
+        }
         .titol {
             font-size: calc(1.5rem + 3vw);
             text-align: center;
@@ -62,7 +65,6 @@
 
         .descripcio {
             max-width: 1200px;
-            padding: 1rem;
             margin: 0 auto;
             text-align: justify;
             font-size: 1.3rem;
@@ -184,12 +186,12 @@
         </a>
     </header>
 
-    <section class="content">
+    <section class="content p-3">
         <section class="titol">
             Mad Jumpgate
         </section>
 
-        <section class="descripcio mb-5">
+        <section class="descripcio">
             Aquest és el meu projecte final del segon curs del Cicle Superior de Desenvolupament d'Aplicacions Multiplataforma (DAM). Em va portar 2 setmanes de feina crear aquest <i>First Person Shooter</i> des de zero, utilitzant Unity. Des del moviment de la càmara i del jugador, passant per les mecàniques de cada tipus d'arma (tant l'usuari com els enemics) i punts de spawn, fins a gestionar l'inventari format per la munició i els subministraments.<br><br>
             
             Característiques:
@@ -210,36 +212,39 @@
         </section>
 
         <section class="gameplay">
-            <iframe width="1920" height="1080" src="https://www.youtube.com/embed/TwJ3bpvQ4qA?si=ZurdWBE81or7K2SC" title="Mad Jumpgate gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/TwJ3bpvQ4qA?si=ZurdWBE81or7K2SC" title="Mad Jumpgate gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
             
         </section>
 
-        <section class="botons px-3">
-            <div class="contenidor-missatge-nomes-pc">
-                <div class="missatge" onclick="mostrarOverlay(false)">
-                    Aquest joc és<br>només per PC
-                </div>
+        <section>
+            <h2 class="text-center mb-5">Jugar a Mad Jumpgate</h2>
+            <div class="botons">
+                <div class="contenidor-missatge-nomes-pc">
+                    <div class="missatge" onclick="mostrarOverlay(false)">
+                        Aquest joc és<br>només per PC
+                    </div>
 
-                <a class="boto boing jugar" href="./webgl/">
-                    <img class="logo" src="assets/unity.png" alt="">
-                    Jugar
+                    <a class="boto boing jugar" href="./webgl/">
+                        <img class="logo" src="assets/unity.png" alt="">
+                        Jugar
+                    </a>
+                    <a class="boto boing itch" href="https://jmaspgames.itch.io/mad-jumpgate">
+                        <img class="logo" src="assets/itch-io.svg" alt="">
+                        Jugar a itch.io
+                    </a>
+                    <a class="boto boing windows" href="https://jordimas96.github.io/r/mad-jumpgate-download-windows">
+                        <img class="logo" src="assets/windows.png" alt="">
+                        Descarregar per a Windows
+                    </a>
+                </div>
+                <a class="boto boing youtube" href="https://youtu.be/TwJ3bpvQ4qA">
+                    <img class="logo" src="assets/youtube.png" alt="">
+                    Gameplay a YouTube
                 </a>
-                <a class="boto boing itch" href="https://jmaspgames.itch.io/mad-jumpgate">
-                    <img class="logo" src="assets/itch-io.svg" alt="">
-                    Jugar a itch.io
-                </a>
-                <a class="boto boing windows" href="https://jordimas96.github.io/r/mad-jumpgate-download-windows">
-                    <img class="logo" src="assets/windows.png" alt="">
-                    Descarregar per a Windows
+                <a class="boto boing info" href="https://jordimas96.github.io/mad-jumpgate-info">
+                    Més informació
                 </a>
             </div>
-            <a class="boto boing youtube" href="https://youtu.be/TwJ3bpvQ4qA">
-                <img class="logo" src="assets/youtube.png" alt="">
-                Gameplay a YouTube
-            </a>
-            <a class="boto boing info" href="https://jordimas96.github.io/mad-jumpgate-info">
-                Més informació
-            </a>
         </section>
 
     </section>
